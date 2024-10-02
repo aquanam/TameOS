@@ -19,6 +19,7 @@ To build TameOS, you need a:
 ### Building TameOS
 
 Once you have met requirements, execute build.sh (superuser access is not required).
+Sources, including build.sh, should be in the TameOS directory.
 If everything goes well, run QEMU with the TameOS ISO produces.
 
 ## Thank you <3
