@@ -13,6 +13,7 @@ echo -e "Cross compiler (assembler): ${AS}\n"
 
 echo "Build phase..."
 echo "[I] Building libraries..."
+# this compilation progress is manky...
 ${CC} -c src/arch/${ARCH}/lib/c/int.c -o src/arch/${ARCH}/lib/c/int.o -O2 -Wall -Wextra
 ${CC} -c src/arch/${ARCH}/lib/c/string.c -o src/arch/${ARCH}/lib/c/string.o -O2 -Wall -Wextra
 ${CC} -c src/arch/${ARCH}/lib/panic.c -o src/arch/${ARCH}/lib/panic.o -O2 -Wall -Wextra
