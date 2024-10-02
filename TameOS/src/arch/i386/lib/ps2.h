@@ -1,0 +1,13 @@
+enum usscanmap {
+    USESCAPE_PRESSED = 0x01,
+    USONE_PRESSED    = 0x02,
+    USTWO_PRESSED    = 0x03,
+    USTHREE_PRESSED  = 0x04,
+    USFOUR_PRESSED   = 0x05,
+    USFIVE_PRESSED   = 0x06,
+    USSIX_PRESSED    = 0x07,
+    USSEVEN_PRESSED  = 0x08,
+    USEIGHT_PRESSED  = 0x09,
+    USNINE_PRESSED   = 0x0A,
+    USZERO_PRESSED   = 0x0B
+};

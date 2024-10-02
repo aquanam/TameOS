@@ -1,0 +1,11 @@
+- Organize many functions into separate header files [x]
+
+- Add printk, with variable formatting.
+>>> printk("Hello, %s!", mything);
+prints -> Hello, good world!
+
+- Receive keyboard input [-] IN THE WORKS
+
+- Receive CPU info [x]
+
+When done any TODO's, add an 'x' in the appended '[ ]' after each.
