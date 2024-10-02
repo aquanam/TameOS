@@ -1,3 +1,5 @@
+/* IN PROGRESS */
+
 enum usscanmap {
     USESCAPE_PRESSED = 0x01,
     USONE_PRESSED    = 0x02,
