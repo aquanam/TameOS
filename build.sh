@@ -14,21 +14,21 @@ echo -e "Cross compiler (assembler): ${AS}\n"
 echo "Build phase..."
 echo "[I] Building libraries..."
 # this compilation progress is manky...
-${CC} -c src/arch/${ARCH}/lib/c/int.c -o src/arch/${ARCH}/lib/c/int.o -O2 -Wall -Wextra
-${CC} -c src/arch/${ARCH}/lib/c/string.c -o src/arch/${ARCH}/lib/c/string.o -O2 -Wall -Wextra
-${CC} -c src/arch/${ARCH}/lib/panic.c -o src/arch/${ARCH}/lib/panic.o -O2 -Wall -Wextra
-${CC} -c src/arch/${ARCH}/lib/cpu.c -o src/arch/${ARCH}/lib/cpu.o -O2 -Wall -Wextra
-${CC} -c src/arch/${ARCH}/lib/vga.c -o src/arch/${ARCH}/lib/vga.o -O2 -Wall -Wextra
-${CC} -c src/arch/${ARCH}/lib/tty.c -o src/arch/${ARCH}/lib/tty.o -O2 -Wall -Wextra
+${CC} -c src/arch/${ARCH}/lib/c/int.c -o int.o -O2 -Wall -Wextra
+${CC} -c src/arch/${ARCH}/lib/c/string.c -o string.o -O2 -Wall -Wextra
+${CC} -c src/arch/${ARCH}/lib/panic.c -o panic.o -O2 -Wall -Wextra
+${CC} -c src/arch/${ARCH}/lib/cpu.c -o cpu.o -O2 -Wall -Wextra
+${CC} -c src/arch/${ARCH}/lib/vga.c -o vga.o -O2 -Wall -Wextra
+${CC} -c src/arch/${ARCH}/lib/tty.c -o tty.o -O2 -Wall -Wextra
 echo "[I] Buiding kernel..."
-${AS} src/arch/${ARCH}/boot.s -o src/arch/${ARCH}/boot.o
-${CC} -c src/arch/${ARCH}/kern.c -o src/arch/${ARCH}/kern.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+${AS} src/arch/${ARCH}/boot.s -o boot.o
+${CC} -c src/arch/${ARCH}/kern.c -o kern.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 echo "[I] Linking kernel..."
 ${CC} -T linker.ld -o tameos.bin -ffreestanding -O2 -nostdlib \
-    src/arch/${ARCH}/boot.o src/arch/${ARCH}/kern.o \
-    src/arch/${ARCH}/lib/c/string.o src/arch/${ARCH}/lib/c/int.o \
-    src/arch/${ARCH}/lib/panic.o src/arch/${ARCH}/lib/cpu.o src/arch/${ARCH}/lib/vga.o src/arch/${ARCH}/lib/tty.o -lgcc
+    boot.o kern.o \
+    string.o int.o \
+    panic.o cpu.o vga.o tty.o -lgcc
 
 echo "[I] Verifying multiboot..."
 if grub-file --is-x86-multiboot tameos.bin; then
