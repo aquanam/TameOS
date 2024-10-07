@@ -14,12 +14,12 @@ To build TameOS, you need a:
 - Linux box (or perhaps WSL)
 - Bash shell
 - i686-elf cross-compiler (not needed if you're host is i686, just change CC in build.sh)
+- Virtual machine 
 - Virtual machine like QEMU
 
 ### Building TameOS
 
 Once you have met requirements, execute build.sh (superuser access is not required).
-Sources, including build.sh, should be in the TameOS directory.
-If everything goes well, run QEMU with the TameOS ISO produces.
+If everything goes well, run QEMU with the produced TameOS ISO.
 
-## Thank you <3
+### Thank you for looking at TameOS ❤️
